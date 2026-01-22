@@ -6,7 +6,7 @@
     <title>HGS Bakiye Yükleme ve Bilgi Portalı</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* GENEL STİLLER */
+        /* GENEL SIFIRLAMA */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -15,24 +15,19 @@
             min-height: 100vh;
         }
 
-        /* YASAL UYARI ŞERİDİ */
-        .disclaimer {
-            background: #cc0000;
-            color: white;
-            text-align: center;
-            padding: 5px;
-            font-size: 11px;
-            font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-        }
-
         /* MASAÜSTÜ (PC) GÖRÜNÜMÜ */
         @media only screen and (min-width: 769px) {
             body {
                 background-color: #f4f4f4;
                 color: #333;
+            }
+            .disclaimer-pc {
+                background: #cc0000;
+                color: white;
+                text-align: center;
+                padding: 8px;
+                font-size: 12px;
+                font-weight: bold;
             }
             .header-pc {
                 background: #fff;
@@ -48,10 +43,10 @@
             }
             .mobile-only { display: none !important; }
             .article-pc { margin-bottom: 30px; line-height: 1.8; text-align: justify; }
-            .faq-section { background: #f9f9f9; padding: 20px; border-radius: 10px; }
+            .faq-section { background: #f9f9f9; padding: 20px; border-radius: 10px; margin-top: 20px; }
         }
 
-        /* MOBİL GÖRÜNÜM (SENİN İSTEDİĞİN TEMA) */
+        /* MOBİL GÖRÜNÜM (KM SORGULAMA TEMASI) */
         @media only screen and (max-width: 768px) {
             .desktop-only { display: none !important; }
             body {
@@ -59,96 +54,114 @@
                 background-size: cover !important;
                 background-attachment: fixed !important;
                 background-position: center !important;
+                position: relative;
+            }
+            /* iOS Kararma efekti */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.3);
+                z-index: -1;
             }
             .mobile-container {
-                padding: 20px;
+                padding: 15px;
                 text-align: center;
             }
             .mobile-logo {
                 width: 100%;
                 background: white;
-                padding: 10px 0;
+                padding: 15px 0;
                 border-bottom: 3px solid #ff9900;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
-            .mobile-logo img { max-width: 200px; }
+            .mobile-logo img { max-width: 180px; height: auto; }
             
             .glass-card {
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.45);
                 padding: 25px;
-                border-radius: 15px;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.15);
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
                 margin-bottom: 20px;
             }
             .mobile-header-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 font-weight: 700;
-                margin-bottom: 10px;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+                margin: 10px 0 20px 0;
+                text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+                letter-spacing: 0.5px;
             }
             .modern-btn {
                 display: block;
                 background: linear-gradient(135deg, #1a5fb4 0%, #1a73e8 100%);
                 color: white;
-                padding: 18px;
+                padding: 16px 20px;
                 font-size: 1.1rem;
                 font-weight: 600;
-                border-radius: 10px;
+                border-radius: 8px;
                 text-decoration: none;
-                box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
-                margin: 20px auto;
-                width: 85%;
+                box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+                margin: 10px auto 10px auto;
+                width: 90%;
+                max-width: 280px;
+                transition: transform 0.2s;
+            }
+            .modern-btn:active { transform: scale(0.98); }
+            
+            .link-subtext {
+                font-size: 0.8rem;
+                color: white;
+                opacity: 0.8;
+                margin-bottom: 30px;
+                text-align: center;
             }
             .footer-mobile {
-                font-size: 0.8rem;
-                opacity: 0.8;
                 padding: 20px;
-                background: rgba(0,0,0,0.6);
+                background: rgba(0,0,0,0.7);
+                font-size: 0.85rem;
+                text-align: center;
+                border-top: 1px solid rgba(255,255,255,0.1);
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="disclaimer">
-        BU SİTE HGS VE RESMİ KURUMLAR İLE BAĞLANTILI DEĞİLDİR. SADECE BİLGİLENDİRME AMAÇLIDIR.
-    </div>
-
     <div class="desktop-only">
+        <div class="disclaimer-pc">
+            BU SİTE HGS VE RESMİ KURUMLAR İLE BAĞLANTILI DEĞİLDİR. SADECE BİLGİLENDİRME AMAÇLIDIR.
+        </div>
         <div class="header-pc">
-            <img src="https://hgs.pttavm.com/v2/assets/images/hgs_ptt.svg?v=201910111500" alt="HGS Logo" style="width:300px;">
+            <img src="https://hgs.pttavm.com/v2/assets/images/hgs_ptt.svg?v=201910111500" alt="HGS Logo" style="width:280px;">
         </div>
         
         <div class="content-pc">
-            <h1>HGS Bakiye Yükleme Rehberi ve Teknik Bilgi Bankası</h1>
+            <h1>HGS Bakiye Yükleme Rehberi ve Detaylı Bilgi Bankası</h1>
             
             <div class="article-pc">
-                <h2>1. HGS Sistemi Nedir ve Nasıl Çalışır?</h2>
-                <p>Hızlı Geçiş Sistemi (HGS), Türkiye'deki otoyol ve köprü geçişlerini modernize etmek amacıyla 17 Eylül 2012 tarihinde devreye alınmıştır. Sistem, araç camına yapıştırılan veya kart şeklinde taşınan RFID (Radyo Frekansı ile Tanımlama) etiketlerinin, gişelerdeki sensörler tarafından okunması prensibiyle çalışır. Bu rehber, hiçbir resmi kurumla bağı olmayan bağımsız bir bilgi kaynağıdır. HGS, eski OGS ve KGS sistemlerinin yerini alarak trafikteki bekleme sürelerini %80 oranında azaltmıştır. PC üzerinden bakiye yükleme işlemleri, yolculuğunuzun kesintisiz sürmesi için en kritik öneme sahip işlemdir.</p>
+                <h2>1. HGS (Hızlı Geçiş Sistemi) Teknolojisi ve Tarihçesi</h2>
+                <p>Hızlı Geçiş Sistemi, Türkiye genelindeki ücretli otoyol ve köprülerde geçiş işlemlerini hızlandırmak amacıyla geliştirilmiş bir RFID teknolojisidir. 2012 yılında devreye alınan bu sistem, araçların durmaksızın geçiş yapabilmesine olanak sağlar. Bilgisayar üzerinden yükleme yapmak, özellikle ticari filo sahipleri ve bireysel kullanıcılar için vakit nakittir prensibiyle büyük bir kolaylık sunar. PC ortamında tarayıcı üzerinden yapılan işlemler, banka altyapılarıyla senkronize çalışarak güvenli bir ödeme katmanı oluşturur.</p>
                 
-                <h2>2. Bilgisayardan HGS Yüklemesi Nasıl Yapılır?</h2>
-                <p>Bilgisayarınızın tarayıcısını kullanarak yükleme yapmak için öncelikle resmi PTTAVM veya banka kanallarını tercih etmelisiniz. İşlem sırasında plaka numaranızı (örnek: 34ABC123) aralarda boşluk bırakmadan girmelisiniz. T.C. Kimlik numaranız ile yapılan sorgulamalarda, adınıza kayıtlı tüm etiketleri listeleyebilirsiniz. Yükleme miktarı belirlenirken, geçiş yapacağınız otoyolun güncel tarifesini kontrol etmeniz önerilir. Ödeme aşamasında mutlaka 3D Secure (SMS onayı) kullanan siteleri tercih ederek kart güvenliğinizi sağlamalısınız.</p>
+                <h2>2. Adım Adım PC Üzerinden Yükleme İşlemi</h2>
+                <p>Yükleme yaparken öncelikle aracınızın plakasını (Örn: 06AAA001) sisteme tanımlamanız gerekir. Ardından, güncel bakiyenizi kontrol ederek ihtiyaç duyduğunuz tutarı belirlemelisiniz. 1. sınıf araçlar (otomobiller) için asgari yükleme limitleri otoyol işletmecileri tarafından periyodik olarak güncellenir. PC üzerinden yapılan yüklemelerde dijital makbuzunuzu PDF olarak kaydedebilir, gider gösterimi için kullanabilirsiniz.</p>
                 
-                <h2>3. Bilgi Bankası: HGS Sınıfları ve Tarifeler</h2>
-                <p>Araçlar HGS sisteminde 6 farklı sınıfa ayrılır. 1. Sınıf: Aks aralığı 3.20m altındaki binek araçlar. 2. Sınıf: Aks aralığı 3.20m üzerindeki minibüs ve otobüsler. 3. Sınıf: 3 akslı her türlü araç. 4. Sınıf: 4 ve 5 akslı tır ve kamyonlar. 5. Sınıf: 6 ve daha fazla akslı dev araçlar. 6. Sınıf ise motosikletlerdir. Yanlış sınıflandırma ile yapılan geçişlerde sistem otomatik olarak ceza yazabilir, bu nedenle etiketinizin aracınızın sınıfıyla uyumlu olduğundan emin olmalısınız.</p>
-                
-                <h2>4. Sıkça Sorulan Sorular (Detaylı Bilgi Bankası)</h2>
-                <div class="faq-section">
-                    <p><strong>Soru: Bakiyem bitince kaç gün içinde yükleme yapmalıyım?</strong><br>
-                    Cevap: İhlalli geçiş tarihinden itibaren 15 gün içinde bakiye yüklemesi yaparsanız, ceza uygulanmadan sadece normal geçiş ücreti tahsil edilir. Bu süre resmi kurumlar tarafından belirlenmiştir.</p>
-                    
-                    <p><strong>Soru: HGS etiketimi başka araca takabilir miyim?</strong><br>
-                    Cevap: Hayır. HGS etiketleri plakaya tanımlıdır. Başka araçta kullanılması durumunda kaçak geçiş statüsüne girer ve cezai işlem uygulanır.</p>
+                <h2>3. Bilgi Bankası: Geçiş İhlalleri ve Ceza Yönetimi</h2>
+                <p>Yetersiz bakiye ile yapılan geçişler "İhlalli Geçiş" olarak kaydedilir. Ancak sistem kullanıcıya 15 günlük bir tolerans süresi tanır. Bu süre zarfında bilgisayarınızdan veya mobil kanallardan yapacağınız bakiye yüklemesi, cezanın otomatik olarak düşmesini sağlar. 15 günü geçen ihlallerde ise geçiş ücretinin bir katı ile on katı arasında değişen idari para cezaları uygulanabilmektedir.</p>
 
-                    <p><strong>Soru: Satılan aracın içindeki HGS bakiyesi ne olur?</strong><br>
-                    Cevap: Aracı sattığınızda etiketi iptal ettirmeniz gerekir. İçeride kalan bakiyeyi yeni aracınızın etiketine transfer edebilir veya PTT şubelerinden geri alabilirsiniz.</p>
+                <div class="faq-section">
+                    <h3>Sıkça Sorulan Sorular</h3>
+                    <p><strong>Bakiye yükledim ama hemen yansımadı, ne yapmalıyım?</strong><br>
+                    Sistem yoğunluğuna bağlı olarak yüklemelerin provizyondan çıkması 15-30 dakika sürebilir. Bu süreçte cihazınızın yeşil ışık yakmaması durumunda endişelenmeyin, plaka üzerinden sorgulama devam eder.</p>
+                    
+                    <p><strong>HGS etiketi camın neresine yapıştırılmalıdır?</strong><br>
+                    Teknik olarak en yüksek okuma performansı, dikiz aynasının hemen arkasında bulunan noktalı alandır. PC üzerinden yapacağınız bakiye yüklemesi kadar, etiketin doğru konumlandırılması da önemlidir.</p>
                 </div>
 
-                <h2>5. Yasal Sorumluluk ve Güvenlik Uyarıları</h2>
-                <p>Bu platform bilgilendirme amaçlıdır. HGS yüklemelerinizi yaparken sadece resmi banka uygulamalarını ve PTT'nin resmi kanallarını kullanınız. E-posta veya SMS ile gelen "Borcunuz var, ödemek için tıklayın" şeklindeki linkler dolandırıcılık amaçlı olabilir. Daima tarayıcınızın adres çubuğuna adresi kendiniz yazarak giriş yapın. Bu site, kullanıcıların hatalı işlemlerinden veya üçüncü taraf linklerden sorumlu tutulamaz.</p>
+                <h2>4. Güvenlik ve Gizlilik Protokolleri</h2>
+                <p>İnternet üzerinden HGS yüklemesi yaparken tarayıcı çubuğundaki kilit simgesine (SSL Sertifikası) dikkat edilmelidir. Kart bilgilerinizin çalınmaması için 3D Secure aşaması olmayan sitelerden uzak durulmalıdır. Bu site bağımsız bir bilgi portalı olup, kullanıcıları güvenli ödeme yöntemleri konusunda eğitmeyi amaçlamaktadır.</p>
 
                 <p>(...Burada metin yaklaşık 6000 karakterlik bir derinliğe sahip olacak şekilde teknik detaylar, otoyol işletme bölgeleri, tünel geçiş ücretleri ve e-devlet entegrasyonu gibi konularla devam etmektedir...)</p>
             </div>
@@ -164,32 +177,30 @@
             <h1 class="mobile-header-title">HGS Bakiye Yükleme ve Sorgulama</h1>
             
             <div class="glass-card">
-                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-                    Araçlarınızın HGS bakiyesini ve geçiş ihlallerini hızlıca öğrenmek, komisyonsuz bakiye yüklemek için aşağıdaki butonu kullanabilirsiniz.
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.7; font-weight: 300;">
+                    Araçlarınızın geçmiş bakiye ve geçiş kayıtlarını hızlı ve güvenli bir şekilde öğrenmek için aşağıdaki butona tıklayarak yükleme ekranına ulaşabilirsiniz.
                 </p>
             </div>
 
             <a href="https://hgs.pttavm.com/bakiye-yukle" class="modern-btn">HGS Yüklemek İçin Tıklayınız</a>
             
-            <p style="font-size: 0.75rem; opacity: 0.8; margin-bottom: 25px;">
+            <div class="link-subtext">
                 https://hgs.pttavm.com/bakiye-yukle
-            </p>
+            </div>
 
             <div class="glass-card" style="text-align: left;">
-                <h2 style="font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">HGS İşlem Rehberi</h2>
-                <p style="font-size: 0.85rem; opacity: 0.9;">
-                    * Plakanızı bitişik yazınız.<br>
-                    * 15 gün içinde yapılan yüklemeler cezayı iptal eder.<br>
-                    * Kredi kartı ile 7/24 işlem yapabilirsiniz.
-                </p>
-                <p style="font-size: 0.7rem; color: #ffcc00; font-weight: bold;">
-                    UYARI: Bu sayfa resmi kurumlarla bağlantılı değildir.
+                <h2 style="font-size: 1.1rem; font-weight: 600; margin-top:0; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Hızlı Bilgi</h2>
+                <p style="font-size: 0.85rem; line-height: 1.8; opacity: 0.95; font-weight: 300;">
+                    • Plaka ile anında bakiye sorgulama.<br>
+                    • 15 gün içinde yükleme yaparak cezadan kurtulun.<br>
+                    • Kredi kartı ile güvenli ve hızlı ödeme.<br>
+                    • Tüm araç sınıfları için uyumlu sistem.
                 </p>
             </div>
         </div>
 
         <div class="footer-mobile">
-            <p>© 2026 HGS Bilgi Portalı<br>Tüm Hakları Saklıdır.</p>
+            <p>© 2026 HGS Bakiye Sorgulama | Tüm Hakları Saklıdır.</p>
         </div>
     </div>
 
